@@ -1,0 +1,247 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background: #000;
+    font-family: "Barriecito", system-ui;;
+    mix-blend-mode: difference;
+}
+.typewriter span {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid white;
+  animation:
+    typing 2.5s steps(40, end) forwards,
+    blink 0.75s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+#loader {
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#loader.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+#main-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#main-content.show {
+  display: block;
+  opacity: 1;
+}
+/* Cursor tracker effect */
+.cursor-tracker {
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  filter: blur(1.5px);
+  transform: translate(-50%, -50%);
+} 
+    /* Arrow animation */
+  #circle i {
+    animation: bounce 1s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+  }
+#main{
+    width: 100%;
+}
+#nav {
+    padding: 2vw 10vw;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+#nleft{
+    display: flex;
+    gap: 30px;
+}
+#nav a{
+    text-decoration: none;
+    color:white;
+}
+#nav #cmain{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-size:xx-large;
+}
+#hero{
+    width: 100%;
+    margin-top: 15vw;
+    padding: 0vw 10vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#rats{
+    width: 10vw;
+}
+#rats p{
+    font-weight: 800;
+    font-size: 14px;
+    margin: 10px 0;
+    line-height: 1;
+    text-transform: capitalize;
+    font-size:x-large ;
+}
+#rats #devrrtsimage {
+    width: 150%;
+    height: 20vw;
+    background: white;
+}
+#devrrtsimage a h1{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+margin: 0;
+color: #000;
+}
+#devrrtsimage a{
+    text-decoration: none;
+}
+#picd{
+    width: 25vw;
+    height: 36vw;
+    background: white;
+    position: relative;
+}
+#picd:hover{
+    background: #000;
+    transition: all 0.5s ease;
+}
+#picd p{
+    width: 25vw;
+    font-size: 20px;
+    margin-top: 25% ;
+    text-transform: capitalize;
+    font-size:x-large ;
+    mix-blend-mode: difference;
+    font-family: 'Courier New', Courier, monospace;
+}
+#headings h1{
+    display: flex;
+   font-size: 6vw;
+   font-weight:400;
+   letter-spacing: -.4vw; 
+   line-height: 0.7;
+   mix-blend-mode: difference;
+   animation:bounce 1s infinite;
+}
+#picd #headings {
+position: absolute;
+top:-27%;
+}
+#motive{
+    padding: 3vw 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+#motive h1{
+    font-weight: 400;
+    font-size: xx-large;
+    margin-top: -3vw;
+}
+#motive p{
+   width: 85%;
+   position: relative;
+   font-size: x-large;
+   line-height: 2 ;
+}
+#zoomPara {
+    white-space: pre-wrap;
+    font-size: 24px;
+    color: white;
+    background: black;
+    padding: 20px;
+  }
+
+  .zoom-letter {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .zoom-letter:hover {
+    transform: scale(2.5);
+    color: #4b6262;
+  }
+ label {
+    width: 50px;
+    height: 20px;
+    position: relative;
+    display: block;
+    background-color: #ebebeb;
+    border-radius: 200px;
+    box-shadow: inset 0 5 15 rgba(0, 0, 0,0.4), inset 0,-5,-15 rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  label:after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background:linear-gradient(180deg, #ffcc89,#d8860b);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(109, 108, 108, 0.2);
+}
+input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+input:checked + label{
+    background: #242424;
+}
+input:checked + label:after{
+    left:50px;
+    transform: translatex(-100%);
+    background: linear-gradient(180deg, #777,#3a3a3a);
+}
+label:active:after{
+    width:25px;
+}
+input:checked + label + body{
+    background: #242424;
+}
